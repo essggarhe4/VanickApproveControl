@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<webParts>
+  <webPart xmlns="http://schemas.microsoft.com/WebPart/v3">
+    <metaData>
+      <type name="VanickApproveControl.VanickApproveControl.VanickApproveControl, $SharePoint.Project.AssemblyFullName$" />
+      <importErrorMessage>$Resources:core,ImportErrorMessage;</importErrorMessage>
+    </metaData>
+    <data>
+      <properties>
+        <property name="Title" type="string">Vanick Approve Control</property>
+        <property name="Description" type="string">Allow to create a control to approve pages</property>
+      </properties>
+    </data>
+  </webPart>
+</webParts>

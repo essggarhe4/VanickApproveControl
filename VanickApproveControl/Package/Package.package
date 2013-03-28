@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="a4ab5c43-73fa-44db-88a7-0e86d803df09" solutionId="a4ab5c43-73fa-44db-88a7-0e86d803df09" resetWebServer="false" name="VanickApproveControl" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel">
+  <features>
+    <featureReference itemId="f3e8fa74-8bc4-4bfc-b05b-bc242b6b3a48" />
+  </features>
+  <projectItems>
+    <projectItemReference itemId="06c544da-aba0-438e-84f4-613d6c78de6f" />
+  </projectItems>
+</package>

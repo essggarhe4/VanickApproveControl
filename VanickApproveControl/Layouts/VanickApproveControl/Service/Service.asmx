@@ -1,0 +1,1 @@
+﻿<%@ WebService Class="VanickApproveControl.Services.CustomServices, VanickApproveControl, Version=1.0.0.0, Culture=neutral, PublicKeyToken=4afee6a202a54038" %>

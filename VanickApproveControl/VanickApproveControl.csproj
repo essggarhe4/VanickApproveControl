@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{50893F74-7644-4884-A119-45F7E8B34499}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>VanickApproveControl</RootNamespace>
+    <AssemblyName>VanickApproveControl</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{BB1F664B-9266-4fd6-B973-E1E44974B511};{14822709-B5A1-4724-98CA-57A101D1B079};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <SandboxedSolution>False</SandboxedSolution>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>key.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Microsoft.SharePoint" />
+    <Reference Include="Microsoft.SharePoint.Security" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Data\ApproveData.cs" />
+    <Compile Include="Data\constants.cs" />
+    <Compile Include="Data\DataPage.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\CustomServices.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="VanickApproveControl\VanickApproveControl.cs" />
+    <Compile Include="VanickApproveControl\VanickApproveControlUserControl.ascx.cs">
+      <DependentUpon>VanickApproveControlUserControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VanickApproveControl\VanickApproveControlUserControl.ascx.designer.cs">
+      <DependentUpon>VanickApproveControlUserControl.ascx.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Features\ApproveControl\ApproveControl.feature">
+      <FeatureId>{f3e8fa74-8bc4-4bfc-b05b-bc242b6b3a48}</FeatureId>
+    </None>
+    <None Include="key.snk" />
+    <None Include="Layouts\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{06c544da-aba0-438e-84f4-613d6c78de6f}</SharePointProjectItemId>
+    </None>
+    <None Include="Package\Package.package">
+      <PackageId>{a4ab5c43-73fa-44db-88a7-0e86d803df09}</PackageId>
+    </None>
+    <None Include="Package\Package.Template.xml">
+      <DependentUpon>Package.package</DependentUpon>
+    </None>
+    <None Include="VanickApproveControl\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{975aeb74-2cdd-47fd-af9e-0f2c8a9620a5}</SharePointProjectItemId>
+    </None>
+    <None Include="VanickApproveControl\VanickApproveControl.webpart" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Features\ApproveControl\ApproveControl.Template.xml">
+      <DependentUpon>ApproveControl.feature</DependentUpon>
+    </Content>
+    <Content Include="Layouts\VanickApproveControl\css\vanickapprovedata.css" />
+    <Content Include="Layouts\VanickApproveControl\JavaScript\ApproveControl.js" />
+    <Content Include="Layouts\VanickApproveControl\JavaScript\jquery-1.9.1.min.js" />
+    <Content Include="Layouts\VanickApproveControl\JavaScript\jquery-ui.js" />
+    <Content Include="Layouts\VanickApproveControl\JavaScript\PageCreator.js" />
+    <Content Include="Layouts\VanickApproveControl\Service\Service.asmx" />
+    <Content Include="Layouts\VanickApproveControl\Service\Service.svc" />
+    <Content Include="VanickApproveControl\Elements.xml" />
+    <Content Include="VanickApproveControl\VanickApproveControlUserControl.ascx">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\SharePointTools\Microsoft.VisualStudio.SharePoint.targets" />
+</Project>
